@@ -40,6 +40,7 @@ class App extends Component {
     console.log("item", this.state.user)
     return (
       <div className="App">
+        <h1>List Of All User Card</h1>
         <span className="card-container">{this.state.user.map((item,index)=>
         <span key={index} className="card">  
         {/* {/* <span>{this.state.user.map((item,index)=>
@@ -54,7 +55,7 @@ class App extends Component {
           <p>{item.website}</p>
           <p>{item.address}</p>
           <p>{item.status}</p>
-          <button onClick={()=>this.deleteItem(item.id)}>delete</button>
+          <button className="delete-button" onClick={()=>this.deleteItem(item.id)}>delete</button>
           </span>
           )}
           </span> 
