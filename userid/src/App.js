@@ -23,6 +23,15 @@ class App extends Component {
     })
 
   }
+  deleteItem(itemId){
+    const {user} = this.state;
+    this.setState({
+        
+        user:user.filter(item=>item.id !==itemId)
+      });
+    
+
+  }
 
   componentDidMount(){
     this.refreshList();
@@ -36,6 +45,7 @@ class App extends Component {
         {/* {/* <span>{this.state.user.map((item,index)=>
         <span key={index} className="card"> */}
           <img src={item._links.avatar.href}/>
+          <p>{item.id}</p>
           <p>{item.first_name} {item.last_name}</p>
           <p>{item.gender}</p>
           <p>{item.dob}</p>
@@ -44,6 +54,7 @@ class App extends Component {
           <p>{item.website}</p>
           <p>{item.address}</p>
           <p>{item.status}</p>
+          <button onClick={()=>this.deleteItem(item.id)}>delete</button>
           </span>
           )}
           </span> 
