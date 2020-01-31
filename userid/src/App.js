@@ -40,7 +40,7 @@ class App extends Component {
     console.log("item", this.state.user)
     return (
       <div className="App">
-        <span>{this.state.user.map((item,index)=>
+        <span className="card-container">{this.state.user.map((item,index)=>
         <span key={index} className="card">  
         {/* {/* <span>{this.state.user.map((item,index)=>
         <span key={index} className="card"> */}
